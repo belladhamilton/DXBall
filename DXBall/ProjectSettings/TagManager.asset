@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 3
   tags:
   - paddle
+  - brick
+  - sideWalll
+  - ceiling
+  - sideWall
+  - bottomWall
   layers:
   - Default
   - TransparentFX
