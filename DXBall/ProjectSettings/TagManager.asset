@@ -10,6 +10,7 @@ TagManager:
   - ceiling
   - sideWall
   - bottomWall
+  - logic
   layers:
   - Default
   - TransparentFX

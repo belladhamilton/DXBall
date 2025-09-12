@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro; // Use this if you’re using TextMeshPro
 public class ball : MonoBehaviour
 {
 
@@ -6,11 +7,14 @@ public class ball : MonoBehaviour
 Rigidbody2D rb;
 public float speed;
 public Vector2 direction;
+public int brickCount = 0;
+public scoreScript score;
 
 void Start()
 {
     rb= GetComponent<Rigidbody2D>();
     direction= Vector2.one.normalized; //(1,1)
+    score = GameObject.FindGameObjectWithTag("logic").GetComponent<scoreScript>();
 }
 
 // Update is called once per frame
@@ -20,21 +24,29 @@ void Update()
 }
 
 void OnTriggerEnter2D(Collider2D collison){
-    if (collison.gameObject.CompareTag("paddle"))
+    if (collison.gameObject.CompareTag("paddle")){
         direction.y = -direction.y;
+    }
 
-    else if (collison.gameObject.CompareTag("brick"))
-    {
+    else if (collison.gameObject.CompareTag("brick")){
         direction.y = -direction.y;
         Destroy(collison.gameObject);
+        brickCount = brickCount + 1;
+        score.addScore(1); // 1 means score happened
+        Debug.Log("Bricks destroyed: " + brickCount);
     }
-    else if (collison.gameObject.CompareTag("sideWall"))
+    else if (collison.gameObject.CompareTag("sideWall")){
         direction.x = -direction.x;
-
-    else if (collison.gameObject.CompareTag("ceiling"))
+    }   
+    else if (collison.gameObject.CompareTag("ceiling")){
         direction.y = -direction.y;
-
-    else if (collison.gameObject.CompareTag("bottomWall"))
-        Debug.Log("Game Over");
     }
+
+    else if (collison.gameObject.CompareTag("bottomWall")){
+        Debug.Log("Game Over");
+        gameObject.SetActive(false);
+        score.addScore(0); // 0 means game over
+    }
+  
+}
 }
