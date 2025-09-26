@@ -8,13 +8,13 @@ Rigidbody2D rb;
 public float speed;
 public Vector2 direction;
 public int brickCount = 0;
-public scoreScript score;
+public scoreScript1 score;
 
 void Start()
 {
     rb= GetComponent<Rigidbody2D>();
     direction= Vector2.one.normalized; //(1,1)
-    score = GameObject.FindGameObjectWithTag("logic").GetComponent<scoreScript>();
+    score = GameObject.FindGameObjectWithTag("logic").GetComponent<scoreScript1>();
 }
 
 // Update is called once per frame

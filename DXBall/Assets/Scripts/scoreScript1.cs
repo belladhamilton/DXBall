@@ -10,8 +10,7 @@ public class scoreScript : MonoBehaviour
     public GameObject ball;
 
 public void addScore(int input)
-    { 
-        if (input == 1){
+    { if (input == 1){
         score=score+input;
         scoreText.text = score.ToString()+" Points";
         if (score == 5){
