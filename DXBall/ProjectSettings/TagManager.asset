@@ -11,6 +11,7 @@ TagManager:
   - sideWall
   - bottomWall
   - logic
+  - music
   layers:
   - Default
   - TransparentFX
