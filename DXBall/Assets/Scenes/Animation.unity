@@ -424,7 +424,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
   musicSource: {fileID: 0}
   sfxSource: {fileID: 0}
-  backgroundMusic: {fileID: 0}
+  backgroundMusic: {fileID: 8300000, guid: 4b343040f6c86473a98c746789a1ed63, type: 3}
   stumbleSound: {fileID: 8300000, guid: 1be8d00fba10746c693117b0f6d597e3, type: 3}
 --- !u!1 &908668770
 GameObject:
