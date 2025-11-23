@@ -1,12 +1,10 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
 
-public class touchRotate : MonoBehaviour, IPointerClickHandler
+public class touchRotate : MonoBehaviour
 {
-    public void OnPointerClick(PointerEventData eventData)
+    void OnMouseDown()
     {
         if (!GameControl.youWin)
             transform.Rotate(0, 0, 90);
     }
 }
-
